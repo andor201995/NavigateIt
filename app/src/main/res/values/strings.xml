@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DemoNavigation</string>
+
+    <string name="btn_click">Click here for next Fragment</string>
+    <string name="text_second">Second Fragment</string>
+    <string name="text_first">FirstFragment</string>
+    <string name="press_back">Press Back to go to First Fragment</string>
+</resources>

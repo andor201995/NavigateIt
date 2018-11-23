@@ -7,4 +7,6 @@
     <string name="press_back">Press Back to go to First Fragment</string>
     <string name="btn_nested_activity">Click here For Starting Nested Activity</string>
     <string name="txt_back_to_exit">Press Back to Exit</string>
+    <string name="btn_bottomSheet">bottomSheet</string>
+    <string name="txt_bottom_sheet">hello welcome to Bottom Sheet</string>
 </resources>

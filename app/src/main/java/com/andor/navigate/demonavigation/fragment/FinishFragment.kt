@@ -12,6 +12,8 @@ import com.andor.navigate.demonavigation.R
 
 class FinishFragment : Fragment() {
 
+    val bottomMenuFragment = BottomMenuFragment()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,8 +22,9 @@ class FinishFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_finish, container, false)
         val btn = view.findViewById<Button>(R.id.btn_bottomSheet)
         btn.setOnClickListener {
-            val bottomMenuFragment = BottomMenuFragment()
-            bottomMenuFragment.show(activity!!.supportFragmentManager,"Bottom_Sheet")
+            if (!bottomMenuFragment.isAdded) {
+                bottomMenuFragment.show(activity!!.supportFragmentManager, "Bottom_Sheet")
+            }
         }
         return view
     }

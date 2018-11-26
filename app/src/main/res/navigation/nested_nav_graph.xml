@@ -8,33 +8,32 @@
     <include app:graph="@navigation/final_nested_nav_graph" />
     <navigation
         android:id="@+id/navigation"
-        app:startDestination="@id/firstFragment">
+        app:startDestination="@id/fourthFragment">
         <fragment
-            android:id="@+id/firstFragment"
-            android:name="com.andor.navigate.demonavigation.fragment.FirstFragment"
-            android:label="fragment_second"
-            tools:layout="@layout/fragment_second">
+            android:id="@+id/fourthFragment"
+            android:name="com.andor.navigate.demonavigation.fragment.FourthFragment"
+            android:label="fragment_fourth"
+            tools:layout="@layout/fragment_fourth">
             <action
-                android:id="@+id/action_firstFragment_to_secondFragment"
-                app:destination="@id/secondFragment" />
+                android:id="@+id/action_fourthFragment_to_fifthFragment"
+                app:destination="@id/fifthFragment" />
         </fragment>
         <fragment
-            android:id="@+id/thirdFragment"
-            android:name="com.andor.navigate.demonavigation.fragment.ThirdFragment"
-            android:label="fragment_third"
-            tools:layout="@layout/fragment_third">
+            android:id="@+id/fifthFragment"
+            android:name="com.andor.navigate.demonavigation.fragment.FifthFragment"
+            android:label="fragment_fifth"
+            tools:layout="@layout/fragment_fifth">
             <action
-                android:id="@+id/action_thirdFragment_to_nested_nav_graph"
-                app:destination="@+id/final_nested_nav_graph" />
+                android:id="@+id/action_fifthFragment_to_sixthFragment"
+                app:destination="@id/sixthFragment" />
         </fragment>
         <fragment
-            android:id="@+id/secondFragment"
-            android:name="com.andor.navigate.demonavigation.fragment.SecondFragment"
-            android:label="SecondFragment">
-            <action
-                android:id="@+id/action_secondFragment_to_thirdFragment"
-                app:destination="@id/thirdFragment"
-                app:popUpTo="@+id/firstFragment" />
-        </fragment>
+            android:id="@+id/sixthFragment"
+            android:name="com.andor.navigate.demonavigation.fragment.SixthFragment"
+            android:label="fragment_sixth"
+            tools:layout="@layout/fragment_sixth" />
+        <action
+            android:id="@+id/action_global_final_nested_nav_graph"
+            app:destination="@id/final_nested_nav_graph" />
     </navigation>
 </navigation>

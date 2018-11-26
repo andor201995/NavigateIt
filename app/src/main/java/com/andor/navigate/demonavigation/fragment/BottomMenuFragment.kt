@@ -8,7 +8,7 @@ import android.support.design.widget.BottomSheetDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import com.andor.navigate.demonavigation.R
 
 
@@ -23,36 +23,21 @@ class BottomMenuFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val bottomSheetNavFragment = BottomSheetNavFragment()
         childFragmentManager.beginTransaction()
-            .replace(R.id.bottom_sheet_nav_host_container, BottomSheetNavFragment(), "Bottom_sheet_Fragment")
+            .replace(R.id.bottom_sheet_nav_host_container, bottomSheetNavFragment, "Bottom_sheet_Fragment")
             .addToBackStack("Bottom_sheet_Fragment").commit()
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = object : BottomSheetDialog(activity!!, theme) {
+        return object : BottomSheetDialog(activity!!, theme) {
             override fun onBackPressed() {
                 val fragment = childFragmentManager.fragments[0]
-                val navigateUp = Navigation.findNavController(fragment.view!!).navigateUp()
+                val navigateUp = findNavController(fragment.view!!).navigateUp()
                 if (!navigateUp) {
                     dismiss()
                 }
-
             }
         }
-//        val dialog = super.onCreateDialog(savedInstanceState)
-//        dialog.setOnKeyListener { dialogInterface, keyCode, kEvent ->
-//            if (keyCode == KeyEvent.KEYCODE_BACK && kEvent.action == KeyEvent.ACTION_UP) {
-//                val fragment = childFragmentManager.fragments[0]
-//                val navigateUp = Navigation.findNavController(fragment.view!!).navigateUp()
-//                if (!navigateUp) {
-//                    dialogInterface.dismiss()
-//                    return@setOnKeyListener false
-//                } else {
-//                    return@setOnKeyListener false
-//                }
-//            }
-//            return@setOnKeyListener false
-//        }
-        return dialog
     }
 }

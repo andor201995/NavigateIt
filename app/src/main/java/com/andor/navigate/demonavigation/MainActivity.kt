@@ -1,5 +1,6 @@
 package com.andor.navigate.demonavigation
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import androidx.navigation.Navigation
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         NavigationUI.setupActionBarWithNavController(this, NavHostFragment.findNavController(nav_host))
+        intent
 
     }
 
@@ -20,4 +22,5 @@ class MainActivity : AppCompatActivity() {
         this,
         R.id.nav_host
     ).navigateUp()
+
 }

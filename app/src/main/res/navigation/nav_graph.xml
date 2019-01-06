@@ -7,7 +7,8 @@
 
     <include app:graph="@navigation/nested_nav_graph" />
 
-    <navigation android:id="@+id/navigation"
+    <navigation
+        android:id="@+id/navigation"
         app:startDestination="@id/firstFragment">
         <fragment
             android:id="@+id/firstFragment"
@@ -17,10 +18,8 @@
             <action
                 android:id="@+id/action_firstFragment_to_secondFragment"
                 app:destination="@+id/secondFragment"
-                app:enterAnim="@anim/nav_default_enter_anim"
-                app:exitAnim="@anim/nav_default_exit_anim"
-                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-                app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+                app:popEnterAnim="@anim/bounce"
+                app:popExitAnim="@anim/fadeout" />
         </fragment>
         <fragment
             android:id="@+id/secondFragment"
@@ -30,10 +29,8 @@
             <action
                 android:id="@+id/action_secondFragment_to_thirdFragment"
                 app:destination="@id/thirdFragment"
-                app:enterAnim="@anim/nav_default_enter_anim"
-                app:exitAnim="@anim/nav_default_exit_anim"
-                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popEnterAnim="@anim/bounce"
+                app:popExitAnim="@anim/zoomout"
                 app:popUpTo="@+id/firstFragment" />
         </fragment>
         <fragment
